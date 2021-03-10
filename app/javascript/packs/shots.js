@@ -17,7 +17,7 @@ document.addEventListener("turbolinks:load", function() {
 						const reader = new FileReader();
 
 						// Closure to capture the file information
-						render.onload = (function(theFile) {
+						reader.onload = (function(theFile) {
 							return function(e) {
 								// Render thumbnail
 								let span = document.createElement('span');
@@ -63,6 +63,7 @@ document.addEventListener("turbolinks:load", function() {
 					if(previewImage) {
 						previewImage.style.display = 'none';
 					}
+					// If on shots/new hide dropzone on drop
 					if(newShotForm) {
 						dropZone.style.display = 'none';
 					}
@@ -80,7 +81,7 @@ document.addEventListener("turbolinks:load", function() {
 				}, false);
 			}
 		}
-	}
-}
+	},
+};
 	Shots.previewShot();
 })
