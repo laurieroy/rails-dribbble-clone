@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+# gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -46,8 +46,6 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-    # Guard::LiveReload automatically reloads your browser when 'view' files are modified
-  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 end
 
 group :test do
@@ -61,17 +59,22 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Rails gem to allowing records to be votable
 gem 'acts_as_votable'
 # Use bulma for UI
 gem 'bulma-rails', '~> 0.9.1'
+# Upload files in your Ruby applications
+gem 'carrierwave', '~> 2.2'
 # devise for auth
 gem 'devise'
-# A configurable and documented Rails view helper for adding gravatars into your Rails application.
-gem 'gravatar_image_tag', '~> 1.2'
 # slugs
 gem 'friendly_id', '~> 5.4.0'
+# A configurable and documented Rails view helper for adding gravatars into your Rails application.
+gem 'gravatar_image_tag', '~> 1.2'
 # Log impressions from controller actions or from a model
 gem 'impressionist', '~> 2.0'
+# Manipulate images with minimal use of memory
+gem 'mini_magick', '~> 4.11'
 # English-language names presentation
 gem 'name_of_person'
 
