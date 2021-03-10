@@ -21,7 +21,7 @@
               <div class="level-item views data">
                 <%= link_to shot do %>
                   <span class="icon"><i class="fa fa-eye"></i></span>
-                  0<%#= shot.impressionist.count %>
+                  <%= shot.impressionist_count %>
                 <% end %>
               </div>
               <div class="level-item comments data">
@@ -31,10 +31,25 @@
                 <% end %>
               </div>
               <div class="level-item likes data">
-                <%= link_to shot do %>
-                  <span class="icon"><i class="fa fa-heart"></i></span>
-                  <span class="vote_count">0<%#= shot.impressionist.count %></span>
+                <% if user_signed_in? %>
+                  <% if current_user.liked? shot %>
+                    <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
+                      <span class="icon"><i class="fa fa-heart-primary"></i></span>
+                      <span class="vote_count"><%= shot.get_likes.size %></span>
+                    <% end %>
+                  <% else %>
+                    <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+                      <span class="icon"><i class="fa fa-heart"></i></span>
+                      <span class="vote_count"><%= shot.get_likes.size %></span>
+                    <% end %>
+                  <% end %>
+                <% else %>
+                  <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+                    <span class="icon"><i class="fa fa-heart"></i></span>
+                    <span class="vote_count"><%= shot.get_likes.size %></span>
+                  <% end %>
                 <% end %>
+                
               </div>
             </div>
           </nav>
