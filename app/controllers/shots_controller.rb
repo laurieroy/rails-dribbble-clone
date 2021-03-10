@@ -1,7 +1,7 @@
 class ShotsController < ApplicationController
   before_action :set_shot, only: %i[ show edit update destroy like unlike ]
   before_action :authenticate_user!, only: %i[ edit update destroy like unlike ]
-  impressionist actions: [:show], unique: %i[ impressionable_id, impressionable_type, session_hash]
+  # impressionist actions: [:show], unique: %i[ impressionable_type, impressionable_id, session_hash]
 
   # GET /shots or /shots.json
   def index

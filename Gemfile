@@ -37,7 +37,7 @@ end
 
 group :development do
   # Better looking errors
-  gem 'better_errors', '~> 2.9', '>= 2.9.1'
+  # gem 'better_errors', '~> 2.9', '>= 2.9.1'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
@@ -46,6 +46,7 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'hirb'
 end
 
 group :test do
@@ -68,7 +69,7 @@ gem 'carrierwave', '~> 2.2'
 # devise for auth
 gem 'devise'
 # slugs
-gem 'friendly_id', '~> 5.4.0'
+# gem 'friendly_id', '~> 5.4.0'
 # A configurable and documented Rails view helper for adding gravatars into your Rails application.
 gem 'gravatar_image_tag', '~> 1.2'
 # Log impressions from controller actions or from a model

@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def destroy
     @shot = Shot.find(params[:shot_id])
     @comment = @shot.comments.find(params[:id])
-    @comment.:destroy
+    @comment.destroy
     redirect_to @shot
   end
 
